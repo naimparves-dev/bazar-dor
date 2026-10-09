@@ -1,35 +1,29 @@
-
-import AllProducts from "@/components/Homepage/AllProducts";
+import { Suspense } from "react";
 import Hero from "@/components/Homepage/Hero";
-import TodayDown from "@/components/Homepage/TodayDown";
-import TodayUp from "@/components/Homepage/TodayUp";
-import type { Product } from "@/components/Shared/Marquee";
+import ProductsSection from "@/components/Homepage/ProductsSection";
 
-export default async function Home() {
-  const res = await fetch(
-    "https://api.abcz.workers.dev/api/bazardor/products"
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
-  }
-
-  const products: Product[] = await res.json();
-
-  const UpProducts = products.filter(
-    (product) => product.change.dir === "up"
-  );
-
-  const downProducts = products.filter(
-    (product) => product.change.dir === "down"
-  );
-
+export default function Home() {
   return (
-    <div>
-      <Hero />
-      <TodayUp UpProducts={UpProducts} />
-      <TodayDown downProducts={downProducts} />
-      <AllProducts products={products} />
-    </div>
+    <main>
+      <Suspense
+        fallback={
+          <div className="mx-auto max-w-7xl px-4 py-5">
+            <div className="h-[228px] animate-pulse rounded-[22px] bg-gray-100" />
+          </div>
+        }
+      >
+        <Hero />
+      </Suspense>
+
+      {/* <Suspense
+        fallback={
+          <div className="mx-auto max-w-7xl px-4 py-10">
+            পণ্যের তথ্য লোড হচ্ছে...
+          </div>
+        }
+      >
+        <ProductsSection />
+      </Suspense> */}
+    </main>
   );
 }

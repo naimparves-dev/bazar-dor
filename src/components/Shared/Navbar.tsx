@@ -4,8 +4,16 @@ import Link from "next/link";
 import { Button } from "@heroui/react";
 import Navlink from "./Navlink";
 import { Suspense } from "react";
+import { connection } from "next/server";
+import UserMenu from "./UserMenu";
 
-const Navbar = () => {
+const Navbar = async() => {
+  await connection();
+
+  const date = new Date().toLocaleDateString("bn-BD", {
+    dateStyle: "full",
+  });
+
   return (
     <header className="w-full bg-[#fafcf9]">
       {/* Top Navbar */}
@@ -24,31 +32,20 @@ const Navbar = () => {
             <h1 className="text-base font-bold leading-5 text-gray-900">
               বাজার দর
             </h1>
+            {date}
             <p className="text-[10px] leading-4 text-gray-600" />
           </div>
         </Link>
 
-        <div className="flex items-center gap-2 sm:gap-4">
-          <Link href="/sign-in">
-            <Button className="h-10 min-w-0 rounded-md bg-transparent px-3 text-[12px] font-semibold text-gray-900">
-              সাইন ইন
-            </Button>
-          </Link>
-
-          <Link href="/sign-up">
-            <Button className="h-10 min-w-0 rounded-lg bg-green-700 px-3 text-[12px] font-semibold text-white shadow-[0_2px_4px_rgba(0,0,0,0.2)] hover:bg-green-800 sm:px-4">
-              সাইন আপ
-            </Button>
-          </Link>
-        </div>
+        <UserMenu />
       </div>
 
       {/* Full-width border + contained category navbar */}
       <div className="w-full border-y border-gray-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-5">
-          <Suspense fallback={<div className="h-[52px]" />}>
+          {/* <Suspense fallback={<div className="h-[52px]" />}>
             <Navlink />
-          </Suspense>
+          </Suspense> */}
         </div>
       </div>
     </header>

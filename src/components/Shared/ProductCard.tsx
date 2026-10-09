@@ -1,5 +1,5 @@
 
-import type { Product } from "./Marquee";
+// import type { Product } from "./Marquee";
 
 interface ProductCardProps {
   product: Product;
