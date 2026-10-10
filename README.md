@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 BazarDor (বাজার দর)
 
-## Getting Started
+BazarDor is a modern, responsive web application designed to help users track, compare, and understand the prices of essential commodities across local markets in Bangladesh. From rice, lentils, and cooking oil to vegetables, fish, meat, and spices, BazarDor brings market price information together in one convenient place.
 
-First, run the development server:
+Users can explore current listed prices, monitor price fluctuations, compare market-wise rates, and make more informed shopping decisions through a clean and user-friendly interface.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Live Demo & Repository
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🚀 **Live Demo:** [Add Your Vercel Deployment URL Here]
+- 💻 **GitHub Repository:** [Add Your GitHub Repository URL Here]
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Key Features
 
-To learn more about Next.js, take a look at the following resources:
+### 📈 1. Live Price Ticker
+- Displays a continuously scrolling ticker of essential commodity prices on the homepage.
+- Shows product emojis, Bengali names, prices, units, and percentage changes.
+- Uses color-coded indicators to make price movements easy to understand.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🏪 2. Market Price Comparison
+- Compare product prices across different local markets, such as Karwan Bazar and Mohammadpur Bazar.
+- View detailed market-wise price breakdowns.
+- Highlight the lowest and highest prices and calculate average prices where data is available.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔎 3. Category Filtering & Sorting
+- Filter products by category for easier browsing.
+- Sort products by default order, price from low to high, or price from high to low.
+- Handle Bengali numerals correctly when processing numeric prices.
 
-## Deploy on Vercel
+### 🔐 4. Authentication & Profile Management
+- Authentication powered by Better Auth.
+- Supports email and password authentication.
+- Includes Google and GitHub social login.
+- Allows authenticated users to manage and update their profile information.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📱 5. Responsive User Interface
+- Built with Tailwind CSS and HeroUI.
+- Designed for mobile phones, tablets, and desktop screens.
+- Provides a clean and consistent browsing experience across devices.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+| :--- | :--- |
+| **Next.js (App Router)** | Application framework and routing |
+| **React** | Component-based user interface |
+| **TypeScript** | Type safety and maintainable code |
+| **Tailwind CSS** | Utility-first styling |
+| **HeroUI** | UI components |
+| **Better Auth** | Authentication and session management |
+| **MongoDB** | Database |
+| **Vercel** | Deployment and hosting |
+
+---
