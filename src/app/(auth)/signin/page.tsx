@@ -41,25 +41,22 @@ export default function SignInPage() {
     );
   };
 
-  // সোশ্যাল লগইন হ্যান্ডলার
   const handleSocialLogin = async (provider: "google" | "github") => {
     await authClient.signIn.social({
       provider,
-      callbackURL: "/", // সফল লগিনের পর হোম পেজে রিডাইরেক্ট হবে
+      callbackURL: "/",
     });
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-[#F2F5F0] px-4 py-12">
-      <div className="w-full max-w-lg bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-gray-100">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-[#F2F5F0] px-4 py-8 sm:py-12">
+      <div className="w-full max-w-lg bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-gray-100">
         
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">সাইন ইন</h1>
-          <p className="text-sm text-gray-500">বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।</p>
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-xl sm:text-3xl font-bold text-gray-900 mb-2">সাইন ইন</h1>
+          <p className="text-xs sm:text-sm text-gray-500">বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।</p>
         </div>
 
-        {/* HeroUI Form */}
         <Form className="flex w-full flex-col gap-4" onSubmit={onSubmit}>
           <TextField
             isRequired
@@ -109,7 +106,6 @@ export default function SignInPage() {
           </Button>
         </Form>
 
-        {/* Divider */}
         <div className="relative my-6 text-center">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-gray-200" />
@@ -117,8 +113,7 @@ export default function SignInPage() {
           <span className="relative bg-white px-3 text-xs text-gray-400">অথবা</span>
         </div>
 
-        {/* Social Buttons */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <button
             type="button"
             onClick={() => handleSocialLogin("google")}
@@ -135,7 +130,6 @@ export default function SignInPage() {
           </button>
         </div>
 
-        {/* Footer Link */}
         <p className="text-center text-sm text-gray-600 mt-6">
           অ্যাকাউন্ট নেই?{" "}
           <Link href="/signup" className="text-[#00873E] font-medium hover:underline">

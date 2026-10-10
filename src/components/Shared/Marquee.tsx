@@ -1,4 +1,3 @@
-
 import MarqueeSlider from "react-fast-marquee";
 
 export interface Product {
@@ -26,7 +25,7 @@ const Marquee = async () => {
   const products: Product[] = await res.json();
 
   return (
-    <div className="border-y border-gray-200 bg-white py-3">
+    <div className="border-y border-gray-200 bg-white py-2 sm:py-3 overflow-hidden">
       <MarqueeSlider
         speed={40}
         pauseOnHover
@@ -35,9 +34,9 @@ const Marquee = async () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className="mx-6 flex shrink-0 items-center gap-2 text-sm"
+            className="mx-4 sm:mx-6 flex shrink-0 items-center gap-2 text-xs sm:text-sm"
           >
-            <span className="text-xl">{product.image}</span>
+            <span className="text-lg sm:text-xl">{product.image}</span>
 
             <span className="font-medium text-gray-800">
               {product.nameBn}
@@ -48,12 +47,13 @@ const Marquee = async () => {
             </span>
 
             <span
-              className={`font-semibold ${product.change.dir === "up"
+              className={`font-semibold ${
+                product.change.dir === "up"
                   ? "text-green-600"
                   : product.change.dir === "down"
                     ? "text-red-600"
                     : "text-gray-500"
-                }`}
+              }`}
             >
               {product.change.dir === "up"
                 ? "▲"

@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
@@ -29,9 +28,9 @@ export default function RootLayout({
     <html
       lang="bn"
       data-theme="light"
-      className={`${hindSiliguri.className} h-full antialiased`}
+      className={`${hindSiliguri.className} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#F2F5F0]">
         <Suspense
           fallback={
             <div className="h-20 border-b border-gray-200" />
@@ -42,7 +41,9 @@ export default function RootLayout({
         <Suspense fallback={<div className="h-8" />}>
           <Marquee />
         </Suspense>
-        {children}
+        <div className="flex-grow">
+          {children}
+        </div>
         <Footer></Footer>
         <Toaster />
       </body>

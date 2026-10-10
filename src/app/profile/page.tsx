@@ -83,17 +83,17 @@ export default function ProfilePage() {
   const user = session.user;
 
   return (
-    <main className="min-h-screen bg-[#F2F5F0] px-4 py-12">
+    <main className="min-h-screen bg-[#F2F5F0] px-4 py-8 sm:py-12">
       <div className="mx-auto max-w-3xl">
 
-        <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">আমার প্রোফাইল</h1>
-          <p className="text-sm text-gray-500">আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন ও পরিবর্তন করুন।</p>
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-xl sm:text-3xl font-bold text-gray-900 mb-1">আমার প্রোফাইল</h1>
+          <p className="text-xs sm:text-sm text-gray-500">আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন ও পরিবর্তন করুন।</p>
         </div>
 
-        <div className="mb-6 rounded-3xl bg-white p-6 shadow-sm border border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="h-16 w-16 overflow-hidden rounded-2xl bg-gray-200 border border-gray-100 flex items-center justify-center font-bold text-xl text-gray-700">
+        <div className="mb-6 rounded-3xl bg-white p-5 sm:p-6 shadow-sm border border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-4 w-full sm:w-auto">
+            <div className="h-14 w-14 sm:h-16 sm:w-16 overflow-hidden rounded-2xl bg-gray-200 border border-gray-100 flex items-center justify-center font-bold text-xl text-gray-700 shrink-0">
               {user.image && user.image.startsWith("http") ? (
                 <Image
                   src={user.image}
@@ -107,21 +107,21 @@ export default function ProfilePage() {
                 <span>{user.name?.charAt(0).toUpperCase() || "U"}</span>
               )}
             </div>
-            <div>
-              <h2 className="text-lg font-bold text-gray-900">{user.name}</h2>
-              <p className="text-sm text-gray-500">{user.email}</p>
+            <div className="overflow-hidden">
+              <h2 className="text-base sm:text-lg font-bold text-gray-900 truncate">{user.name}</h2>
+              <p className="text-xs sm:text-sm text-gray-500 truncate">{user.email}</p>
             </div>
           </div>
 
           <button
             onClick={handleSignOut}
-            className="flex items-center gap-2 rounded-xl border border-red-200 px-4 py-2.5 text-xs font-medium text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-xl border border-red-200 px-4 py-2.5 text-xs font-medium text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
           >
             <span>↪</span> সাইন আউট
           </button>
         </div>
 
-        <div className="rounded-3xl bg-white p-6 sm:p-8 shadow-sm border border-gray-100">
+        <div className="rounded-3xl bg-white p-5 sm:p-8 shadow-sm border border-gray-100">
           <h3 className="text-base font-bold text-gray-900 mb-6">তথ্য</h3>
 
           <form onSubmit={handleUpdate} className="space-y-6">

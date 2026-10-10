@@ -32,7 +32,7 @@ export default function LoadingPage() {
           লোড হচ্ছে...
         </h1>
 
-        <p className="mx-auto max-w-[260px] text-sm leading-6 text-gray-500">
+        <p className="mx-auto max-w-65 text-sm leading-6 text-gray-500">
           আপনার জন্য বাজারদরের সর্বশেষ তথ্য প্রস্তুত করা হচ্ছে।
           দয়া করে একটু অপেক্ষা করুন।
         </p>

@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 
 interface Category {
@@ -18,7 +17,7 @@ const Navlink = async () => {
 
   return (
     <nav className="w-full">
-      <div className="flex items-center justify-start gap-7 overflow-x-auto py-3">
+      <div className="flex items-center justify-start gap-6 sm:gap-7 overflow-x-auto py-3 no-scrollbar scroll-smooth">
         {data.map((item) => (
           <Link
             key={item.id}

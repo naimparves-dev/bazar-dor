@@ -56,13 +56,13 @@ export default function SignUpPage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-[#F2F5F0] px-4 py-12">
-      <div className="w-full max-w-lg bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-gray-100">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-[#F2F5F0] px-4 py-8 sm:py-12">
+      <div className="w-full max-w-lg bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-gray-100">
         
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">অ্যাকাউন্ট তৈরি করুন</h1>
-          <p className="text-sm text-gray-500">বিনামূল্যে সাইন আপ করে সব বিস্তারিত দাম দেখুন।</p>
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-xl sm:text-3xl font-bold text-gray-900 mb-2">অ্যাকাউন্ট তৈরি করুন</h1>
+          <p className="text-xs sm:text-sm text-gray-500">বিনামূল্যে সাইন আপ করে সব বিস্তারিত দাম দেখুন।</p>
         </div>
 
         {/* HeroUI Form */}
@@ -142,7 +142,7 @@ export default function SignUpPage() {
         </div>
 
         {/* Social Buttons */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <button
             type="button"
             onClick={() => handleSocialLogin("google")}

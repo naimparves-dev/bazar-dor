@@ -34,7 +34,7 @@ interface ProductDetailsProps {
   }>;
 }
 
-// ডেটা ফেচিং ও রেন্ডারিংয়ের মূল কন্টেন্ট কম্পোনেন্ট
+// ডেটা ফেচিং ও রেন্ডারিংয়ের মূল কন্টেন্ট কম্পোনেন্ট
 async function ProductDetailsContent({ params }: ProductDetailsProps) {
   const { productId } = await params;
 
@@ -44,7 +44,7 @@ async function ProductDetailsContent({ params }: ProductDetailsProps) {
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center text-gray-500">
-        কোনো পণ্য পাওয়া যায়নি।
+        কোনো পণ্য পাওয়া যায়নি।
       </div>
     );
   }
@@ -58,17 +58,17 @@ async function ProductDetailsContent({ params }: ProductDetailsProps) {
   const highestMarket = product.markets.find((m) => m.max === highestPrice)?.market || "";
 
   const priceDiff = product.today - product.yesterday;
-  let changeText = "দাম অপরিবর্তিত রয়েছে";
+  let changeText = "দাম অপরিবর্তিত রয়েছে";
   if (priceDiff > 0) {
-    changeText = `গতকালের তুলনায় আজ দাম বেড়েছে ${priceDiff} টাকা`;
+    changeText = `গতকালের তুলনায় আজ দাম বেড়েছে ${priceDiff} টাকা`;
   } else if (priceDiff < 0) {
-    changeText = `গতকালের তুলনায় আজ দাম কমেছে ${Math.abs(priceDiff)} টাকা`;
+    changeText = `গতকালের তুলনায় আজ দাম কমেছে ${Math.abs(priceDiff)} টাকা`;
   }
 
   return (
     <div className="mx-auto max-w-6xl">
       {/* ব্রেডক্রাম্ব */}
-      <div className="mb-6 text-xs text-gray-500 flex items-center gap-1.5">
+      <div className="mb-6 text-xs text-gray-500 flex items-center gap-1.5 overflow-x-auto whitespace-nowrap">
         <Link href="/" className="hover:underline">হোম</Link>
         <span>›</span>
         <Link href={`/catagory/${product.category}`} className="hover:underline">{product.categoryNameBn}</Link>
@@ -77,13 +77,13 @@ async function ProductDetailsContent({ params }: ProductDetailsProps) {
       </div>
 
       {/* ১. শীর্ষ প্রধান কার্ড */}
-      <div className="mb-8 rounded-3xl bg-white p-6 sm:p-8 shadow-sm border border-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div className="flex items-center gap-5">
-          <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-[#F4F7F4] text-4xl shadow-inner">
+      <div className="mb-8 rounded-3xl bg-white p-5 sm:p-8 shadow-sm border border-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="flex items-center gap-4 sm:gap-5 w-full md:w-auto">
+          <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-[#F4F7F4] text-3xl sm:text-4xl shadow-inner shrink-0">
             {product.image}
           </div>
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">{product.nameBn}</h1>
+            <h1 className="text-xl sm:text-3xl font-bold text-gray-900 mb-1">{product.nameBn}</h1>
             <p className="text-xs sm:text-sm text-gray-500">
               প্রতি {product.unit === "kg" ? "কেজি" : product.unit} · {product.nameBn}
             </p>
@@ -131,10 +131,10 @@ async function ProductDetailsContent({ params }: ProductDetailsProps) {
       </div>
 
       {/* ৩. বাজারভিত্তিক আজকের দাম টেবিল */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
+      <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-gray-100">
         <h2 className="text-lg font-bold text-gray-900 mb-6">বাজারভিত্তিক আজকের দাম</h2>
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+          <table className="w-full text-left border-collapse min-w-[500px]">
             <thead>
               <tr className="border-b border-gray-100 text-xs sm:text-sm text-gray-400 font-medium">
                 <th className="pb-3 px-2">বাজার</th>
@@ -144,7 +144,7 @@ async function ProductDetailsContent({ params }: ProductDetailsProps) {
                 <th className="pb-3 px-2 text-right">গড়</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-50 text-sm">
+            <tbody className="divide-y divide-gray-50 text-xs sm:text-sm">
               {product.markets.map((item, index) => {
                 const avgMarketPrice = ((item.min + item.max) / 2).toFixed(1);
                 return (
@@ -167,7 +167,7 @@ async function ProductDetailsContent({ params }: ProductDetailsProps) {
   );
 }
 
-// মূল পেজ যেখানে Suspense বাউন্ডারি ব্যবহার করা হয়েছে
+// মূল পেজ যেখানে Suspense বাউন্ডারি ব্যবহার করা হয়েছে
 export default function ProductDetailsPage({ params }: ProductDetailsProps) {
   return (
     <main className="min-h-screen bg-[#F2F5F0] px-4 py-8">
