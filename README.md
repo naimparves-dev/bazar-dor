@@ -8,8 +8,8 @@ Users can explore current listed prices, monitor price fluctuations, compare mar
 
 ## 🌐 Live Demo & Repository
 
-- 🚀 **Live Demo:** [Add Your Vercel Deployment URL Here]
-- 💻 **GitHub Repository:** [Add Your GitHub Repository URL Here]
+- 🚀 **Live Demo:** [https://bazar-dor-roan.vercel.app/]
+- 💻 **GitHub Repository:** [https://github.com/naimparves-dev/bazar-dor]
 
 ---
 
