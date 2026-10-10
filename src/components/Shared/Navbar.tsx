@@ -43,9 +43,9 @@ const Navbar = async() => {
       {/* Full-width border + contained category navbar */}
       <div className="w-full border-y border-gray-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-5">
-          {/* <Suspense fallback={<div className="h-[52px]" />}>
+          <Suspense fallback={<div className="h-[52px]" />}>
             <Navlink />
-          </Suspense> */}
+          </Suspense>
         </div>
       </div>
     </header>

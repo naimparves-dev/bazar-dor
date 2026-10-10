@@ -35,9 +35,9 @@ export default function RootLayout({
         >
           <Navbar />
         </Suspense>
-        {/* <Suspense fallback={<div className="h-8" />}>
+        <Suspense fallback={<div className="h-8" />}>
           <Marquee />
-        </Suspense> */}
+        </Suspense>
         {children}
         <Footer></Footer>
         <Toaster />

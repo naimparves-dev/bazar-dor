@@ -15,7 +15,7 @@ export default function Home() {
         <Hero />
       </Suspense>
 
-      {/* <Suspense
+      <Suspense
         fallback={
           <div className="mx-auto max-w-7xl px-4 py-10">
             পণ্যের তথ্য লোড হচ্ছে...
@@ -23,7 +23,7 @@ export default function Home() {
         }
       >
         <ProductsSection />
-      </Suspense> */}
+      </Suspense>
     </main>
   );
 }
