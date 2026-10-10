@@ -10,7 +10,6 @@ export default function NotFoundPage() {
 
       {/* 404 card */}
       <div className="relative w-full max-w-lg rounded-3xl border border-white bg-white p-8 shadow-xl shadow-emerald-900/5 sm:p-12">
-        {/* 404 illustration */}
         <div className="relative mx-auto mb-7 flex h-32 w-32 items-center justify-center">
           <div className="absolute inset-0 rounded-full border border-dashed border-emerald-200" />
 
@@ -24,8 +23,6 @@ export default function NotFoundPage() {
             ৳
           </span>
         </div>
-
-        {/* Heading */}
         <span className="mb-4 inline-flex rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-[#00873E]">
           পেজটি খুঁজে পাওয়া যায়নি
         </span>
@@ -39,7 +36,6 @@ export default function NotFoundPage() {
           পেজটি সরিয়ে ফেলা হয়ে থাকতে পারে অথবা লিংকটি সঠিক নয়।
         </p>
 
-        {/* Back to homepage */}
         <Link href="/" className="block w-full">
           <Button
             className="h-12 w-full cursor-pointer rounded-xl bg-[#00873E] text-sm font-semibold text-white shadow-md shadow-emerald-900/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#007032] hover:shadow-lg"
@@ -49,7 +45,6 @@ export default function NotFoundPage() {
           </Button>
         </Link>
 
-        {/* Footer */}
         <div className="mt-6 flex items-center justify-center gap-2 text-xs text-gray-400">
           <span className="h-1.5 w-1.5 rounded-full bg-[#00873E]" />
           <span>

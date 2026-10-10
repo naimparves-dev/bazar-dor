@@ -16,6 +16,20 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  // সোশ্যাল লগইন ইমেজ ডোমেইনগুলো এখানে যুক্ত করতে হবে
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ichef.bbci.co.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
+
