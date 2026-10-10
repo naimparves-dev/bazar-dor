@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useParams } from "next/navigation";
 import ProductCard from "@/components/Shared/ProductCard";
 
@@ -23,7 +23,7 @@ interface Product {
   };
 }
 
-export default function CategoryPage() {
+function CategoryContent() {
   const params = useParams();
   const id = params?.id as string;
 
@@ -124,5 +124,19 @@ export default function CategoryPage() {
 
       </div>
     </main>
+  );
+}
+
+export default function CategoryPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen pb-12">
+        <div className="mx-auto max-w-7xl px-4 py-16 text-center text-gray-500">
+          লোড হচ্ছে...
+        </div>
+      </main>
+    }>
+      <CategoryContent />
+    </Suspense>
   );
 }
