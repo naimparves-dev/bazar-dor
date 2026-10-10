@@ -15,7 +15,7 @@ export interface Product {
 
 const Marquee = async () => {
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/products"
+    "https://api.abcz.workers.dev/api/bazardor/products"
   );
 
   if (!res.ok) {
@@ -47,13 +47,12 @@ const Marquee = async () => {
             </span>
 
             <span
-              className={`font-semibold ${
-                product.change.dir === "up"
+              className={`font-semibold ${product.change.dir === "up"
                   ? "text-green-600"
                   : product.change.dir === "down"
                     ? "text-red-600"
                     : "text-gray-500"
-              }`}
+                }`}
             >
               {product.change.dir === "up"
                 ? "▲"

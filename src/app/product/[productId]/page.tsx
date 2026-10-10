@@ -38,7 +38,7 @@ interface ProductDetailsProps {
 async function ProductDetailsContent({ params }: ProductDetailsProps) {
   const { productId } = await params;
 
-  const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products/${productId}`);
+  const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productId}`);
   const product: ProductDetails = await res.json();
 
   if (!product) {

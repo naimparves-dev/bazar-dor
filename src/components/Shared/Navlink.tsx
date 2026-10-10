@@ -9,7 +9,7 @@ interface Category {
 
 const Navlink = async () => {
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/categories"
+    "https://api.abcz.workers.dev/api/bazardor/categories"
   );
   if (!res.ok) { throw new Error("Failed to fetch categories"); }
 
